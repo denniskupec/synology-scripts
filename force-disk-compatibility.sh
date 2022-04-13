@@ -5,11 +5,11 @@ for device in $(/usr/bin/ls /run/synostorage/disks); do
 
 	touch $PREFIX/compatibility.lock
 
-	echo 'support' > $PREFIX/compatibility
-	echo 'support' > $PREFIX/force_compatibility
+	echo -n 'support' > $PREFIX/compatibility
+	echo -n 'support' > $PREFIX/force_compatibility
 
 	# sourced from /var/lib/disk-compatibility/host_rule.db
-	echo '{"discard_from_web":false,"notification":false,"selectable":true,"alert":false,"ui_compatibility":"support"}' > $PREFIX/compatibility_action
+	echo -n '{"discard_from_web":false,"notification":false,"selectable":true,"alert":false,"ui_compatibility":"support"}' > $PREFIX/compatibility_action
 done
 
 exit 0
